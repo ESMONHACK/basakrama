@@ -7,36 +7,107 @@
 <body>
   <h2>Login dengan Google</h2>
   <button id="loginGoogle">Login dengan Google</button>
+  <button id="logoutBtn" style="display:none;">Logout</button>
   <div id="message"></div>
+
+  <h2>Register Akun Baru</h2>
+  <form id="registerForm">
+    <input type="text" id="regUsername" placeholder="Username" required><br>
+    <input type="email" id="regEmail" placeholder="Email" required><br>
+    <input type="password" id="regPassword" placeholder="Password" required><br>
+    <button type="submit">Register</button>
+  </form>
+  <div id="registerMessage"></div>
+
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script>
-    // Konfigurasi Firebase Web
-    const firebaseConfig = {
-      apiKey: "AIzaSyAcsHpWGeN7LOa7n2lI5Q4rN_AEFTYa4AE",
-      authDomain: "esmonhack.firebaseapp.com",
-      projectId: "esmonhack",
-      storageBucket: "esmonhack.firebasestorage.app",
-      messagingSenderId: "762262889155",
-      appId: "1:762262889155:web:99dcd2f7baf60dbaedb876",
-      measurementId: "G-GHT261VMQ3"
-    };
-    firebase.initializeApp(firebaseConfig);
+    fetch('/firebase-config')
+      .then(res => res.json())
+      .then(firebaseConfig => {
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const provider = new firebase.auth.GoogleAuthProvider();
 
-    const auth = firebase.auth();
-    const provider = new firebase.auth.GoogleAuthProvider();
+        // Tampilkan tombol logout jika sudah login
+        function showLogout(show) {
+          document.getElementById('logoutBtn').style.display = show ? 'inline-block' : 'none';
+        }
 
-    document.getElementById('loginGoogle').addEventListener('click', function() {
-      auth.signInWithPopup(provider)
-        .then((result) => {
-          document.getElementById('message').innerText = 'Login berhasil sebagai ' + result.user.email;
-          // Jika ingin kirim token ke backend:
-          // result.user.getIdToken().then(token => { ... });
-        })
-        .catch((error) => {
-          document.getElementById('message').innerText = error.message;
+        // Login dengan Google
+        document.getElementById('loginGoogle').addEventListener('click', function() {
+          auth.signInWithPopup(provider)
+            .then(async (result) => {
+              const email = result.user.email;
+              const idToken = await result.user.getIdToken();
+              fetch("/auth/google", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ idToken, email })
+              })
+              .then(res => res.json())
+              .then(data => {
+                if (data.token) {
+                  localStorage.setItem("jwtToken", data.token);
+                  document.getElementById('message').innerText = "Login berhasil!";
+                  showLogout(true);
+                } else {
+                  document.getElementById('message').innerText = data.error;
+                  showLogout(false);
+                }
+              });
+            })
+            .catch((error) => {
+              document.getElementById('message').innerText = error.message;
+              showLogout(false);
+            });
         });
-    });
+
+        // Register email, username, password
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = document.getElementById('regEmail').value;
+          const password = document.getElementById('regPassword').value;
+          const username = document.getElementById('regUsername').value;
+
+          auth.createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+              return userCredential.user.updateProfile({ displayName: username });
+            })
+            .then(() => {
+              document.getElementById('registerMessage').innerText = 'Registrasi berhasil!';
+            })
+            .catch((error) => {
+              document.getElementById('registerMessage').innerText = error.message;
+            });
+        });
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+          auth.signOut().then(() => {
+            localStorage.removeItem("jwtToken");
+            document.getElementById('message').innerText = "Anda telah logout.";
+            showLogout(false);
+          });
+        });
+
+        // Auto login jika token sudah ada
+        const token = localStorage.getItem("jwtToken");
+        if (token) {
+          fetch("/protected", {
+            headers: { "Authorization": "Bearer " + token }
+          })
+          .then(res => res.json())
+          .then(data => {
+            if (data.message) {
+              document.getElementById('message').innerText = data.message;
+              showLogout(true);
+            }
+          });
+        } else {
+          showLogout(false);
+        }
+      });
   </script>
 </body>
 </html>
