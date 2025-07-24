@@ -32,45 +32,45 @@ export const Desktop = (): React.JSX.Element => {
     ];
 
     return (
-        <main className="bg-[#fdf6ec] flex flex-row justify-center w-full">
-            <div className="bg-[#fdf6ec] overflow-hidden w-[1440px] relative">
+        <main className="bg-[#fdf6ec] flex flex-col items-center min-h-screen w-full">
+            <div className="bg-[#fdf6ec] overflow-hidden w-full max-w-[1440px] relative px-4 sm:px-8">
                 {/* Hero Section */}
-                <section className="relative">
+                <section className="relative flex flex-col md:flex-row items-center md:items-start justify-center md:h-[700px]">
+                    {/* Ilustrasi kiri */}
                     <img
-                        className="w-[647px] h-[626px] mt-[63px] ml-[69px]"
+                        className="w-[250px] h-[240px] mt-8 md:w-[400px] md:h-[386px] md:mt-[63px] md:ml-[69px] md:static md:relative"
                         alt="Mail sent pana"
                         src="/mail-sent-pana.png"
                     />
 
+                    {/* Logo/ornamen kanan atas */}
                     <img
-                        className="absolute w-[184px] h-[184px] top-0 right-[67px] object-cover"
+                        className="hidden md:block absolute w-[120px] h-[120px] top-0 right-4 md:w-[184px] md:h-[184px] md:right-[67px] object-cover"
                         alt="Hackaton"
                         src="/hackaton-01-1.png"
                     />
 
-                    <div className="absolute w-[650px] top-[130px] left-[550px] font-normal text-4xl text-center tracking-[0] leading-9">
-                        <span className="font-bold text-[#32373b]">
-                            Cara yang menyenangkan dan efektif untuk belajar 
-                        </span>
-                        
-                        <span className="font-bold text-[#c83e4d]"> bahasa </span>
-                        
-                        <span className="font-bold text-[#32373b]">dan </span>
-                        
-                        <span className="font-bold text-[#c83e4d]"> budaya</span>
-                    </div>
-
-                    <div className="flex flex-col gap-5 absolute top-[250px] left-[650px]">
-                        <Button className="w-[437px] h-[72px] bg-[#c83e4d] rounded-[25px] shadow-[5px_5px_4px_#00000040] [font-family:'Fredoka',Helvetica] font-bold text-white text-4xl">
-                            Mulai
-                        </Button>
-
-                        <Button
-                            variant="outline"
-                            className="w-[437px] h-[72px] rounded-[25px] border-[5px] border-solid border-[#f4d6cc] shadow-[5px_5px_4px_#00000040] [font-family:'Fredoka',Helvetica] font-bold text-[#f4b860] text-4xl"
-                        >
-                            Sudah punya akun
-                        </Button>
+                    {/* Konten utama */}
+                    <div className="flex flex-col items-center md:items-start md:absolute md:top-[130px] md:left-[550px] w-full md:w-[650px] z-10">
+                        <div className="font-normal text-2xl sm:text-3xl md:text-4xl text-center md:text-left tracking-[0] leading-9 font-din mb-6">
+                            <span className="font-bold text-[#32373b]">
+                                Cara yang menyenangkan dan efektif untuk belajar
+                            </span>
+                            <span className="font-bold text-[#c83e4d]"> bahasa </span>
+                            <span className="font-bold text-[#32373b]">dan </span>
+                            <span className="font-bold text-[#c83e4d]"> budaya</span>
+                        </div>
+                        <div className="flex flex-col gap-4 w-full items-center md:items-start">
+                            <Button className="w-full max-w-[320px] md:w-[320px] md:h-[60px] bg-[#c83e4d] rounded-[25px] shadow-[5px_5px_4px_#00000040] font-bold text-white text-xl md:text-2xl">
+                                Mulai
+                            </Button>
+                            <Button
+                                variant="outline"
+                                className="w-full max-w-[320px] md:w-[320px] md:h-[60px] rounded-[25px] border-[3px] md:border-[5px] border-solid border-[#f4d6cc] shadow-[5px_5px_4px_#00000040] font-bold text-[#f4b860] text-xl md:text-2xl bg-white"
+                            >
+                                Sudah punya akun
+                            </Button>
+                        </div>
                     </div>
                 </section>
 

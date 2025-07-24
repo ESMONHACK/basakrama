@@ -56,7 +56,7 @@
             '"Segoe UI Symbol"',
             '"Noto Color Emoji"'
             ],
-            // din: ['DIN Round Pro Bold', 'Helvetica', 'sans-serif'],
+            din: ['DIN Round Pro Bold', 'Helvetica', 'sans-serif'],
         },
         keyframes: {
             "accordion-down": {
