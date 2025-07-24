@@ -140,7 +140,7 @@ export const Desktop: React.FC = () => {
           </h2>
 
           <div className="flex justify-center mb-8 lg:mb-12">
-            <Button className="w-full max-w-md h-14 lg:h-16 xl:h-[72px] bg-[#c83e4d] rounded-[25px] shadow-[5px_5px_4px_#00000040] font-bold text-white text-xl lg:text-2xl xl:text-4xl hover:bg-[#b73642] transition-colors font-fredoka">
+            <Button className="w-full max-w-md h-14 lg:h-16 xl:h-[72px] bg-[#c83e4d] rounded-[25px] shadow-[5px_5px_4px_#00000040] font-bold text-white text-xl lg:text-2xl xl:text-4xl hover:bg-[#b73642] transition-colors font-fredoka" onClick={() => navigate("/introduction")}>
               Mulai
             </Button>
           </div>

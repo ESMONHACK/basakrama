@@ -6,6 +6,7 @@ import { Desktop } from "./screens/Desktop";
 import { LoginForm } from "./screens/Desktop/Login/Loginform";
 import { RegisterForm } from  "./screens/Desktop/Register/Registerform"
 import { IntroductionForm } from "./screens/Desktop/Introduction/Introductionform"
+import { Dashboard } from "./screens/Desktop/Dashboard/Dashboardkrama"
 
 function AppRoutes() {
   const location = useLocation();
@@ -16,6 +17,8 @@ function AppRoutes() {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />  
         <Route path="/introduction" element={<IntroductionForm />} />  
+        <Route path="/dashboard" element={<Dashboard />} />  
+        
       </Routes>
     </AnimatePresence>
   );

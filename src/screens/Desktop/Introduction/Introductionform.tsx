@@ -174,10 +174,7 @@ export const IntroductionForm = () => {
             {/* Tombol Next jika sudah pilih */}
             {selectedProficiency && (
               <button
-                className="mt-8 px-8 py-2 bg-[#c83e4d] text-white font-bold rounded-full shadow hover:bg-[#b73642] transition-colors"
-                onClick={() => alert(
-                  `Bahasa: ${selectedLanguage}, Tujuan: ${selectedPurpose}, Kemampuan: ${selectedProficiency}`
-                )}
+                className="mt-8 px-8 py-2 bg-[#c83e4d] text-white font-bold rounded-full shadow hover:bg-[#b73642] transition-colors"  onClick={() => navigate("/dashboard")}
               >
                 Selesai
               </button>
