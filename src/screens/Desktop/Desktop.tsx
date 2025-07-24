@@ -55,7 +55,7 @@ export const Desktop: React.FC = () => {
           </div>
 
           {/* Hero Content */}
-          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left px-4 lg:px-8">
+          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left px-4 lg:px-8 font-fredoka">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-3xl font-bold mb-8 lg:mb-12 leading-tight text-center lg:text-left">
               <span className="text-[#32373b] block">
                 Cara yang menyenangkan dan efektif
@@ -86,7 +86,7 @@ export const Desktop: React.FC = () => {
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             {/* Kiri: Judul & Deskripsi */}
             <div className="w-full lg:w-1/2 px-4 lg:px-8 flex flex-col items-center lg:items-start text-center lg:text-left">
-              <h2 className="text-1xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-[#c83e4d] mb-2">
+              <h2 className="text-1xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-[#c83e4d] mb-2 font-fredoka">
                 menyenangkan dan efektif
               </h2>
               <p className="text-base sm:text-lg lg:text-xl xl:text-2xl font-medium text-[#32373b]">
@@ -115,15 +115,13 @@ export const Desktop: React.FC = () => {
               />
             </div>
 
-            <div className="w-full lg:w-1/2 px-4 lg:px-8 order-1 lg:order-2">
-              <h2 className="text-1xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-[#c83e4d] mb-2">
+            <div className="w-full lg:w-1/2 px-4 lg:px-8 order-1 lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-[#c83e4d] mb-2 font-fredoka">
                 selalu termotivasi
               </h2>
 
-              <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-medium text-[#32373b] text-center lg:text-left leading-relaxed">
-                Kami mempermudah pembentukan kebiasan belajar bahasa budaya dengan
-                fitur-fitur mirip game dan tantangan seru. Seperti sambung kata,
-                bubble kata, dan tebak suara
+              <p className="text-base sm:text-lg lg:text-xl xl:text-2xl font-medium text-[#32373b]">
+                Kami mempermudah pembentukan kebiasaan belajar bahasa budaya dengan fitur-fitur mirip game dan tantangan seru. Seperti sambung kata, bubble kata, dan tebak suara
               </p>
             </div>
           </div>
@@ -133,7 +131,7 @@ export const Desktop: React.FC = () => {
 
         {/* Call to Action Section */}
         <section className="py-16 lg:py-24 text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-12 lg:mb-16 px-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-12 lg:mb-16 px-4 leading-tight font-fredoka">
             <span className="text-[#32373b]">
               Belajar bahasa daerah dengan{" "}
             </span>
@@ -141,7 +139,7 @@ export const Desktop: React.FC = () => {
           </h2>
 
           <div className="flex justify-center mb-8 lg:mb-12">
-            <Button className="w-full max-w-md h-14 lg:h-16 xl:h-[72px] bg-[#c83e4d] rounded-[25px] shadow-[5px_5px_4px_#00000040] font-bold text-white text-xl lg:text-2xl xl:text-4xl hover:bg-[#b73642] transition-colors">
+            <Button className="w-full max-w-md h-14 lg:h-16 xl:h-[72px] bg-[#c83e4d] rounded-[25px] shadow-[5px_5px_4px_#00000040] font-bold text-white text-xl lg:text-2xl xl:text-4xl hover:bg-[#b73642] transition-colors font-fredoka">
               Mulai
             </Button>
           </div>

@@ -3,7 +3,7 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
-export const LoginForm = () => {
+export const RegisterForm = () => {
   const navigate = useNavigate();
 
   return (
@@ -16,13 +16,13 @@ export const LoginForm = () => {
     >
       {/* Tombol Back */}
       <button
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/login")}
         className="absolute top-4 left-4 bg-white rounded-full shadow p-2 flex items-center gap-2 hover:bg-gray-100 transition-colors z-30"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#c83e4d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
-        <span className="hidden sm:inline text-[#c83e4d] font-bold font-fredoka">Kembali</span>
+        <span className="hidden sm:inline text-[#c83e4d] font-bold">Kembali</span>
       </button>
 
       {/* Login Card */}
@@ -34,8 +34,8 @@ export const LoginForm = () => {
           className="w-24 sm:w-32 mx-auto mb-2"
         />
         {/* Title */}
-        <h2 className="text-xl sm:text-2xl font-extrabold text-center mb-6 text-[#32373b] drop-shadow font-fredoka">
-          Masuk
+        <h2 className="text-xl sm:text-2xl font-extrabold text-center mb-6 text-white drop-shadow font-fredoka">
+          Register
         </h2>
         {/* Form */}
         <form className="w-full flex flex-col gap-4">
@@ -43,8 +43,16 @@ export const LoginForm = () => {
             <label className="block text-sm font-semibold mb-1 text-[#6d4c41] font-fredoka">Username</label>
             <input
               type="text"
-              className="w-full rounded-lg px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#c83e4d] bg-white text-sm sm:text-base font-fredoka placeholder:text-opacity-80"
+              className="w-full rounded-lg px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#c83e4d] bg-white text-sm sm:text-base font-fredoka"
               placeholder="Masukkan username"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-semibold mb-1 text-[#6d4c41] font-fredoka">Email</label>
+            <input
+              type="text"
+              className="w-full rounded-lg px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#c83e4d] bg-white text-sm sm:text-base font-fredoka"
+              placeholder="Masukkan email"
             />
           </div>
           <div>
@@ -60,24 +68,16 @@ export const LoginForm = () => {
             type="submit"
             className="w-full bg-[#c83e4d] text-white font-bold py-2 rounded-lg shadow hover:bg-[#b73642] transition-colors text-base sm:text-lg font-fredoka"
           >
-            Masuk
-          </button>
-          {/* Tombol Google */}
-          <button
-            type="button"
-            className="w-full flex items-center justify-center gap-2 border border-gray-300 bg-white text-[#32373b] font-bold py-2 rounded-lg shadow hover:bg-gray-100 transition-colors text-base sm:text-lg"
-          >
-            <img src="/images/google.png" alt="Google" className="h-6 w-6" />
-            Google
+            Daftar akun
           </button>
         </form>
         {/* Register Link */}
-        <div className="w-full text-center mt-4">
+        {/* <div className="w-full text-center mt-4">
           <span className="text-xs text-[#6d4c41]">Tidak punya akun?</span>
-          <button className="block w-full mt-2 bg-white text-[#c83e4d] font-bold py-2 rounded-full shadow hover:bg-[#ffe0e0] transition-colors text-sm sm:text-base font-fredoka" onClick={() => navigate("/register")}>
+          <button className="block w-full mt-2 bg-white text-[#c83e4d] font-bold py-2 rounded-full shadow hover:bg-[#ffe0e0] transition-colors text-sm sm:text-base">
             Daftar
           </button>
-        </div>
+        </div> */}
       </div>
     </motion.div>
   );

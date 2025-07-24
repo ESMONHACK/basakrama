@@ -56,6 +56,7 @@
                 '"Segoe UI Symbol"',
                 '"Noto Color Emoji"',
             ],
+            fredoka: ['Fredoka', 'sans-serif'],
             },
             keyframes: {
             "accordion-down": {
