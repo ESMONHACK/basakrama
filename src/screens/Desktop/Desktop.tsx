@@ -66,7 +66,8 @@ export const Desktop: React.FC = () => {
             </h1>
 
             <div className="flex flex-col gap-4 w-full max-w-md">
-              <Button className="w-full h-14 lg:h-16 xl:h-[72px] bg-[#c83e4d] rounded-[25px] shadow-[5px_5px_4px_#00000040] font-bold text-white text-xl lg:text-2xl xl:text-4xl hover:bg-[#b73642] transition-colors">
+              <Button className="w-full h-14 lg:h-16 xl:h-[72px] bg-[#c83e4d] rounded-[25px] shadow-[5px_5px_4px_#00000040] font-bold text-white text-xl lg:text-2xl xl:text-4xl hover:bg-[#b73642] transition-colors"
+              onClick={() => navigate("/introduction")}>
                 Mulai
               </Button>
 
