@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login Email</title>
+</head>
+<body>
+  <h2>Login dengan Google</h2>
+  <button id="loginGoogle">Login dengan Google</button>
+  <div id="message"></div>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script>
+    // Konfigurasi Firebase Web
+    const firebaseConfig = {
+      apiKey: "AIzaSyAcsHpWGeN7LOa7n2lI5Q4rN_AEFTYa4AE",
+      authDomain: "esmonhack.firebaseapp.com",
+      projectId: "esmonhack",
+      storageBucket: "esmonhack.firebasestorage.app",
+      messagingSenderId: "762262889155",
+      appId: "1:762262889155:web:99dcd2f7baf60dbaedb876",
+      measurementId: "G-GHT261VMQ3"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    document.getElementById('loginGoogle').addEventListener('click', function() {
+      auth.signInWithPopup(provider)
+        .then((result) => {
+          document.getElementById('message').innerText = 'Login berhasil sebagai ' + result.user.email;
+          // Jika ingin kirim token ke backend:
+          // result.user.getIdToken().then(token => { ... });
+        })
+        .catch((error) => {
+          document.getElementById('message').innerText = error.message;
+        });
+    });
+  </script>
+</body>
+</html>
