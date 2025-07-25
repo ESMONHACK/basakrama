@@ -8,7 +8,7 @@ import { RegisterForm } from  "./screens/Desktop/Register/Registerform"
 import { IntroductionForm } from "./screens/Desktop/Introduction/Introductionform"
 import { Dashboard } from "./screens/Desktop/Dashboard/Dashboardkrama"
 // import { Profile } from "./screens/Desktop/Dashboard/Profile"
-import { Gamesambungkata } from "./screens/Desktop/Dashboard/Gamesambungkata"
+import { MatchingGame } from "./screens/Desktop/Dashboard/Gamesambungkata"
 
 function AppRoutes() {
   const location = useLocation();
@@ -21,7 +21,7 @@ function AppRoutes() {
         <Route path="/introduction" element={<IntroductionForm />} />  
         <Route path="/dashboard" element={<Dashboard />} />  
         {/* <Route path="/profile" element={<Profile />} />   */}
-        <Route path="/sambungkata" element={<Gamesambungkata />} />
+        <Route path="/sambungkata" element={<MatchingGame />} />
       </Routes>
     </AnimatePresence>
   );
