@@ -32,13 +32,13 @@ export const Dashboard = () => {
   return (
     <div className="min-h-screen flex bg-[#fdf6ec]">
       {/* Sidebar Desktop */}
-      <div className="w-64 bg-[#FFD180] flex-col items-center py-6 px-4 min-h-screen hidden md:flex">
+      <div className="w-64 bg-[#FFD180] flex flex-col items-center py-6 px-4 min-h-screen hidden md:flex">
         <img
           src="/images/logokecil.png"
           alt="Basa Krama Logo"
           className="w-24 sm:w-32 mx-auto mb-8"
         />
-        <nav className="flex flex-col gap-6 w-full">
+        <nav className="flex flex-col gap-6 w-full flex-1">
           {menuItems.map((item) => (
             <button
               key={item.key}
@@ -62,6 +62,19 @@ export const Dashboard = () => {
               <span className="hidden md:inline">{item.label}</span>
             </button>
           ))}
+          <button
+            onClick={() => {
+              // Tambahkan logika logout di sini, misal: hapus token, redirect ke login
+              navigate("/login");
+            }}
+            className="mt-auto w-full flex items-center gap-2 px-12 py-2 rounded-lg font-bold font-fredoka text-lg text-[#c83e4d] hover:bg-white/40 hover:text-[#b73642] transition-all focus:outline-none"
+            type="button"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#c83e4d">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h4a2 2 0 012 2v1" />
+            </svg>
+            Logout
+          </button>
         </nav>
       </div>
       {/* Main Content */}

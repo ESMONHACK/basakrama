@@ -12,9 +12,106 @@ const questions = [
       "Lusa"
     ],
     answer: 0,
-    
   },
-  // Tambahkan soal lain sesuai kebutuhan
+  {
+    question: 'Budi sedang belajar di ______.',
+    sub: 'Pilih kata yang tepat untuk melengkapi kalimat.',
+    options: [
+      "Pasar",
+      "Sekolah",
+      "Rumah",
+      "Kebun"
+    ],
+    answer: 1,
+  },
+  {
+    question: 'Ibu membeli sayur di ______.',
+    sub: 'Pilih kata yang tepat untuk melengkapi kalimat.',
+    options: [
+      "Sekolah",
+      "Pasar",
+      "Kantor",
+      "Rumah"
+    ],
+    answer: 1,
+  },
+  {
+    question: 'Andi sedang bermain bola di ______.',
+    sub: 'Pilih kata yang tepat untuk melengkapi kalimat.',
+    options: [
+      "Kebun",
+      "Lapangan",
+      "Dapur",
+      "Kelas"
+    ],
+    answer: 1,
+  },
+  {
+    question: 'Ayah pergi bekerja ke ______.',
+    sub: 'Pilih kata yang tepat untuk melengkapi kalimat.',
+    options: [
+      "Kantor",
+      "Pasar",
+      "Sekolah",
+      "Rumah"
+    ],
+    answer: 0,
+  },
+  {
+    question: 'Sinta sedang membaca buku di ______.',
+    sub: 'Pilih kata yang tepat untuk melengkapi kalimat.',
+    options: [
+      "Kebun",
+      "Perpustakaan",
+      "Dapur",
+      "Lapangan"
+    ],
+    answer: 1,
+  },
+  {
+    question: 'Mereka makan malam di ______.',
+    sub: 'Pilih kata yang tepat untuk melengkapi kalimat.',
+    options: [
+      "Kamar",
+      "Dapur",
+      "Kebun",
+      "Kelas"
+    ],
+    answer: 1,
+  },
+  {
+    question: 'Paman menanam pohon di ______.',
+    sub: 'Pilih kata yang tepat untuk melengkapi kalimat.',
+    options: [
+      "Kebun",
+      "Kelas",
+      "Dapur",
+      "Perpustakaan"
+    ],
+    answer: 0,
+  },
+  {
+    question: 'Anak-anak belajar bersama di ______.',
+    sub: 'Pilih kata yang tepat untuk melengkapi kalimat.',
+    options: [
+      "Lapangan",
+      "Kebun",
+      "Kelas",
+      "Dapur"
+    ],
+    answer: 2,
+  },
+  {
+    question: 'Ibu memasak nasi di ______.',
+    sub: 'Pilih kata yang tepat untuk melengkapi kalimat.',
+    options: [
+      "Dapur",
+      "Kelas",
+      "Kebun",
+      "Lapangan"
+    ],
+    answer: 0,
+  },
 ];
 
 export const GameSoal = () => {
