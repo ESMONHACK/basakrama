@@ -148,7 +148,7 @@ export const GameSoal = () => {
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen bg-[#fdf6ec]">
+    <div className="relative flex flex-col items-center justify-center min-h-screen bg-[#fdf6ec] px-2 sm:px-4">
       {/* Tombol Back */}
       <button
         onClick={() => navigate("/dashboard")}
@@ -162,11 +162,11 @@ export const GameSoal = () => {
 
       {/* Step 1: Pilih jumlah soal */}
       {step === 1 && (
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-8 w-full">
           <h1 className="text-2xl md:text-3xl font-extrabold text-[#32373b] text-center mb-10 mt-4 font-fredoka">
             Kamu mau berapa soal?
           </h1>
-          <div className="flex flex-col gap-6 w-full max-w-xs">
+          <div className="flex flex-col gap-6 w-full max-w-xs sm:max-w-sm">
             <button
               className="border-4 border-[#FFC14D] rounded-2xl py-4 px-8 font-extrabold text-[#32373b] text-center text-lg transition-all duration-200 hover:bg-[#fff7e6]"
               onClick={() => { setJumlahSoal(5); setStep(2); setCurrent(0); }}
@@ -186,7 +186,7 @@ export const GameSoal = () => {
       {/* Step 2: Soal pilihan ganda */}
       {step === 2 && (
         <div className="flex flex-col items-center w-full">
-          <div className="mb-2 mt-4 z-10">
+          <div className="mb-2 mt-4 z-10 w-full max-w-lg">
             <div className="text-xl md:text-2xl font-bold text-[#32373b] text-center font-fredoka mb-2">
               Ayo selesaikan latihan soal ini...
             </div>

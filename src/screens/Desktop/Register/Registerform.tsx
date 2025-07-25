@@ -36,13 +36,21 @@ export const RegisterForm = () => {
           Register
         </h2>
         {/* Form */}
-        <form className="w-full flex flex-col gap-4">
+        <form
+          className="w-full flex flex-col gap-4"
+          onSubmit={e => {
+            e.preventDefault();
+            // Jika semua input sudah terisi, baru lakukan aksi (misal: navigate)
+            navigate("/login");
+          }}
+        >
           <div>
             <label className="block text-sm font-semibold mb-1 text-[#6d4c41] font-fredoka">Username</label>
             <input
               type="text"
               className="w-full rounded-lg px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#c83e4d] bg-white text-sm sm:text-base font-fredoka"
               placeholder="Masukkan username"
+              required
             />
           </div>
           <div>
@@ -51,6 +59,7 @@ export const RegisterForm = () => {
               type="text"
               className="w-full rounded-lg px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#c83e4d] bg-white text-sm sm:text-base font-fredoka"
               placeholder="Masukkan email"
+              required
             />
           </div>
           <div>
@@ -59,6 +68,7 @@ export const RegisterForm = () => {
               type="password"
               className="w-full rounded-lg px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#c83e4d] bg-white text-sm sm:text-base font-fredoka"
               placeholder="Masukkan kata sandi"
+              required
             />
           </div>
           {/* Tombol Masuk */}
