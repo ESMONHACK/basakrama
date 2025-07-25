@@ -15,7 +15,7 @@ A learning application for regional languages in Indonesia. Created in a fun gam
 - Frontend: React, TailwindCSS, Vite
 - Backend: Node.js
 - Database: MySQL, Firebase
-- AI API: Gemini Flash 2.0
+- AI API: Gemini Flash 2.0 and Grok
 
 ## ⚙️ How to Run the Project (Setup)
 1. `git https://github.com/ESMONHACK/basakrama`
