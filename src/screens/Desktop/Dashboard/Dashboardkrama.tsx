@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { WholeWord, Workflow, Ear, BookOpenText, CircleUser } from 'lucide-react';
+import { WholeWord, Workflow, BookText, BookOpenText, CircleUser } from 'lucide-react';
 
 export const Dashboard = () => {
   const navigate = useNavigate();
@@ -90,7 +90,7 @@ export const Dashboard = () => {
           >
             <div className="absolute -top-6 left-4 bg-[#FFD180] rounded-full p-2 text-2xl"><Workflow color="#32373b"/></div>
             <div className="font-bold text-lg mb-2 mt-4">Sambung Kata</div>
-            <div className="text-sm">
+            <div className="text-sm text-left">
               Melatih daya ingat dan pengetahuan budaya lewat permainan menyambungkan kata-kata yang berkaitan dengan daerah-daerah di Indonesia.
             </div>
           </button>
@@ -102,20 +102,20 @@ export const Dashboard = () => {
           >
             <div className="absolute -top-6 left-4 bg-[#FFD180] rounded-full p-2 text-2xl"><WholeWord color="#32373b"/></div>
             <div className="font-bold text-lg mb-2 mt-4">Bubble Kata</div>
-            <div className="text-sm">
+            <div className="text-sm text-left">
               Mengasah ketelitian dan pemahaman budaya lewat pilihan kata dalam bentuk gelembung yang harus dipilih atau disusun dengan benar.
             </div>
           </button>
           {/* Card 3 */}
           <button
-            onClick={() => navigate("/tebaksuara")}
+            onClick={() => navigate("/soal")}
             className="flex-1 bg-[#c83e4d] rounded-2xl p-5 shadow text-white max-w-xs mx-auto flex flex-col items-start relative transition-transform hover:scale-105 focus:outline-none"
             type="button"
           >
-            <div className="absolute -top-6 left-4 bg-[#FFD180] rounded-full p-2 text-2xl"><Ear color="#32373b"/></div>
-            <div className="font-bold text-lg mb-2 mt-4">Tebak Suara</div>
-            <div className="text-sm">
-              mengajak pengguna untuk mendengarkan rekaman suara dari penutur asli yang berbicara dalam bahasa daerah
+            <div className="absolute -top-6 left-4 bg-[#FFD180] rounded-full p-2 text-2xl"><BookText color="#32373b" /></div>
+            <div className="font-bold text-lg mb-2 mt-4">Latihan Soal</div>
+            <div className="text-sm text-left">
+              Latihan interaktif berupa soal pilihan ganda yang menguji pemahaman pengguna terhadap kosa kata dan struktur bahasa daerah dengan cara praktis dan efisien 
             </div>
           </button>
         </div>

@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Notifikasi } from "../../../components/ui/notifikasi";
+import React, { useState } from "react";
 
 export const LoginForm = () => {
   const navigate = useNavigate();
+  const [showNotif, setShowNotif] = useState(false);8
 
   return (
     <motion.div
@@ -57,6 +60,11 @@ export const LoginForm = () => {
           <button
             type="submit"
             className="w-full bg-[#c83e4d] text-white font-bold py-2 rounded-lg shadow hover:bg-[#b73642] transition-colors text-base sm:text-lg font-fredoka"
+            onClick={e => {
+              e.preventDefault();
+              setShowNotif(true);
+              setTimeout(() => navigate("/introduction"), 2000);
+            }}
           >
             Masuk
           </button>
@@ -64,6 +72,10 @@ export const LoginForm = () => {
           <button
             type="button"
             className="w-full flex items-center justify-center gap-2 border border-gray-300 bg-white text-[#32373b] font-bold py-2 rounded-lg shadow hover:bg-gray-100 transition-colors text-base sm:text-lg"
+            onClick={() => {
+              setShowNotif(true);
+              setTimeout(() => navigate("/introduction"), 2000);
+            }}
           >
             <img src="/images/google.png" alt="Google" className="h-6 w-6" />
             Google
@@ -77,6 +89,12 @@ export const LoginForm = () => {
           </button>
         </div>
       </div>
+      <Notifikasi
+        message="Login berhasil!"
+        type="success"
+        show={showNotif}
+        onClose={() => setShowNotif(false)}
+      />
     </motion.div>
   );
 };

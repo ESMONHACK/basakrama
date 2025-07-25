@@ -9,6 +9,8 @@ import { IntroductionForm } from "./screens/Desktop/Introduction/Introductionfor
 import { Dashboard } from "./screens/Desktop/Dashboard/Dashboardkrama"
 // import { Profile } from "./screens/Desktop/Dashboard/Profile"
 import { MatchingGame } from "./screens/Desktop/Dashboard/Gamesambungkata"
+import {Gamebubblekata} from "./screens/Desktop/Dashboard/Gamebubblekata"
+import {GameSoal} from "./screens/Desktop/Dashboard/Gamesoal"
 
 function AppRoutes() {
   const location = useLocation();
@@ -22,6 +24,8 @@ function AppRoutes() {
         <Route path="/dashboard" element={<Dashboard />} />  
         {/* <Route path="/profile" element={<Profile />} />   */}
         <Route path="/sambungkata" element={<MatchingGame />} />
+        <Route path="/bubblekata" element={<Gamebubblekata />} />
+        <Route path="/soal" element={<GameSoal />} />
       </Routes>
     </AnimatePresence>
   );
