@@ -1,12 +1,25 @@
-# React + Vite
+# 🚀 Basa Krama
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Basa Krama: A fun and enjoyable language
 
-Currently, two official plugins are available:
+## 📝 Project Description
+A learning application for regional languages in Indonesia. Created in a fun gamified format.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 👥 Our Team
+- Muhamad Nabil Faiz Amrullah - Frontend Developer
+- Muhamad Yusuf - Product Manager
+- Ramzy Fadlil Agusanddawi - UI/UX Designer
+- Yusuf Nurwahid - Backend Developer
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
+- Frontend: React, TailwindCSS, Vite
+- Backend: Node.js
+- Database: MySQL, Firebase
+- AI API: Gemini Flash 2.0
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ How to Run the Project (Setup)
+1. `git https://github.com/ESMONHACK/basakrama`
+2. `cd basakrama` and run `npm install`
+
+## 🔗 Important Links
+- **Demo Link:** https://youtu.be/OE9qV-sQGeA?feature=shared
